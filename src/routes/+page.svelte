@@ -92,13 +92,20 @@
             ],
         },
         {
-            name: "sexchange",
+            name: "meowpayments",
             description:
                 "Private, custom crypto payment processor proxying near intents",
             longDescription:
-                "sexchange is a private crypto payment processor built using the free Near API, handling all major networks & tokens. Built for and used by horr.id, it was created for a privacy focused, no AML solution to other existing services such as nowpayments",
+                "meowpayments is a private crypto payment processor built using the free Near API, handling all major networks & tokens. Built for and used by horr.id, it was created for a privacy focused, no AML solution to other existing services such as nowpayments",
             icon: "/exch.png",
             stack: ["Go", "Python", "CQL"],
+            links: [
+                {
+                    label: "github",
+                    href: "https://github.com/stupidchud/meowpayments",
+                    kind: "github",
+                },
+            ],
         },
     ];
 
