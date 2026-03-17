@@ -1,0 +1,209 @@
+.modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+}
+
+.modal-panel {
+    position: relative;
+    --modal-size: min(560px, calc(100vw - 32px));
+    width: var(--modal-size);
+    height: var(--modal-size);
+    background: #1e1e1e;
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 16px;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.modal-left {
+    width: 50%;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-right: 1px solid rgba(255, 255, 255, 0.06);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.modal-gif {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    cursor: zoom-in;
+}
+
+.modal-preview-mobile {
+    display: none;
+}
+
+.modal-gif-placeholder {
+    width: 100%;
+    height: 100%;
+    background: #161616;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.no-preview {
+    color: #444;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    user-select: none;
+}
+
+.modal-right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 20px 14px;
+    gap: 12px;
+}
+
+.modal-title-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.modal-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    object-fit: cover;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    flex-shrink: 0;
+}
+
+.modal-title {
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #e5e7eb;
+    letter-spacing: -0.01em;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    color: rgba(229, 231, 235, 0.35);
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+    flex-shrink: 0;
+    margin-left: auto;
+}
+
+.modal-close:hover {
+    color: rgba(229, 231, 235, 0.85);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.modal-body {
+    padding: 0 20px 20px;
+    color: rgba(229, 231, 235, 0.65);
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.88rem;
+    line-height: 1.6;
+    overflow: visible;
+    flex: 1;
+}
+
+.modal-footer {
+    padding: 14px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.lightbox-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    cursor: zoom-out;
+}
+
+.lightbox-img {
+    max-width: calc(100vw - 48px);
+    max-height: calc(100vh - 48px);
+    width: auto;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    box-shadow: 0 32px 100px rgba(0, 0, 0, 0.8);
+    display: block;
+    cursor: default;
+}
+
+.lightbox-close {
+    position: fixed;
+    top: 18px;
+    right: 18px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 6px;
+    color: rgba(229, 231, 235, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-close:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(229, 231, 235, 0.9);
+}
+
+@media (max-width: 500px) {
+    .modal-panel {
+        flex-direction: column;
+        --modal-size: min(560px, calc(100vw - 32px));
+        width: var(--modal-size);
+        height: auto;
+        max-height: calc(100vh - 32px);
+    }
+
+    .modal-left {
+        width: 100%;
+        height: 180px;
+        flex-shrink: 0;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .modal-right {
+        width: 100%;
+        overflow-y: auto;
+    }
+
+    .modal-preview-desktop {
+        display: none;
+    }
+
+    .modal-preview-mobile {
+        display: block;
+        object-fit: cover;
+    }
+}
