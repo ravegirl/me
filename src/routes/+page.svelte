@@ -157,6 +157,28 @@
         ...extraIcons,
     };
 
+    let lastUpdated = $state<string | null>(null);
+
+    onMount(async () => {
+        try {
+            const cacheKey = "gh_last_updated";
+            const cached = localStorage.getItem(cacheKey);
+            if (cached) {
+                const { date, ts } = JSON.parse(cached);
+                if (Date.now() - ts < 86_400_000) { lastUpdated = date; return; }
+            }
+            const res = await fetch("https://api.github.com/repos/stupidchud/me/commits?per_page=1");
+            if (res.ok) {
+                const [commit] = await res.json();
+                const date = new Date(commit.commit.committer.date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
+                lastUpdated = date;
+                localStorage.setItem(cacheKey, JSON.stringify({ date, ts: Date.now() }));
+            }
+        } catch {
+            // silently fail
+        }
+    });
+
     let selectedProject = $state<Project | null>(null);
     let displayedProject = $state<Project | null>(null);
     let descExpanded = $state(false);
@@ -331,6 +353,9 @@
                 </div>
             {/each}
         </div>
+        {#if lastUpdated}
+            <p class="last-updated">last updated {lastUpdated}</p>
+        {/if}
     </section>
 </div>
 

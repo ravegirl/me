@@ -7,6 +7,11 @@
 
 * {
     box-sizing: border-box;
+    scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+    display: none;
 }
 
 body {
@@ -432,4 +437,11 @@ body {
     .modal-read-more.hidden {
         display: none;
     }
+}
+
+.last-updated {
+    margin-top: 12px;
+    font-size: 0.72rem;
+    color: rgba(229, 231, 235, 0.3);
+    text-align: right;
 }
