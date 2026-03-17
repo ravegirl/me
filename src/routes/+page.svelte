@@ -158,9 +158,7 @@
 
     function closeProject() {
         selectedProject = null;
-        setTimeout(() => {
-            displayedProject = null;
-        }, 360);
+        setTimeout(() => { displayedProject = null; }, 180);
     }
 </script>
 
@@ -429,9 +427,7 @@
 </Modal>
 
 <style>
-    @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Stack+Sans+Headline:wght@200..700&display=swap");
-
-    :global(body) {
+:global(body) {
         margin: 0;
         background-color: var(--color-bg);
         color: var(--color-text);
@@ -563,7 +559,6 @@
         color: rgba(229, 231, 235, 0.35);
         display: flex;
         align-items: center;
-        transition: color 0.2s ease;
         flex-shrink: 0;
     }
 
@@ -599,7 +594,6 @@
         gap: 4px;
         color: rgba(229, 231, 235, 0.75);
         text-decoration: none;
-        transition: color 0.15s ease;
     }
 
     .svelte-link:hover {
@@ -649,10 +643,6 @@
         font-weight: 500;
         text-decoration: none;
         cursor: pointer;
-        transition:
-            background 0.15s ease,
-            border-color 0.15s ease,
-            color 0.15s ease;
     }
 
     .pill:hover {
@@ -699,9 +689,6 @@
         background: rgba(255, 255, 255, 0.03);
         border: 1px solid rgba(255, 255, 255, 0.07);
         overflow: hidden;
-        transition:
-            background 0.15s ease,
-            border-color 0.15s ease;
         cursor: pointer;
         text-decoration: none;
         color: inherit;
@@ -763,7 +750,6 @@
         object-fit: contain;
         padding: 2px;
         margin-left: -5px;
-        transition: transform 0.15s ease;
     }
 
     .stack-icon:first-child {
@@ -840,10 +826,6 @@
         font-family: "DM Sans", sans-serif;
         font-weight: 500;
         text-decoration: none;
-        transition:
-            background 0.15s ease,
-            border-color 0.15s ease,
-            color 0.15s ease;
     }
 
     :global(.modal-link:hover) {

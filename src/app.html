@@ -3,6 +3,46 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<!-- Preconnect to font/icon CDNs -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+
+		<!-- Preload DM Sans font -->
+		<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" />
+
+		<!-- Preload local images -->
+		<link rel="preload" as="image" href="/pfp.png" />
+		<link rel="preload" as="image" href="/horrid.png" />
+		<link rel="preload" as="image" href="/spypet.png" />
+		<link rel="preload" as="image" href="/asdfgh.png" />
+		<link rel="preload" as="image" href="/exch.png" />
+		<link rel="preload" as="image" href="/sql.png" />
+
+		<style>
+			:root {
+				--color-bg: #191919;
+				--color-text: #e5e7eb;
+				--color-primary: #1a1a1a;
+				--color-grid: rgba(255, 255, 255, 0.005);
+			}
+			*, *::before, *::after { box-sizing: border-box; }
+			body {
+				margin: 0;
+				background-color: #191919;
+				color: #e5e7eb;
+				font-family: "DM Sans", sans-serif;
+			}
+			.fade-section {
+				opacity: 0;
+				transition: opacity 0.5s ease var(--delay, 0ms);
+			}
+			.fade-section.visible {
+				opacity: 1;
+			}
+		</style>
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">
