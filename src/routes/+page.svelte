@@ -126,7 +126,7 @@
                 const { date, ts } = JSON.parse(cached);
                 if (Date.now() - ts < 86_400_000) { lastUpdated = date; return; }
             }
-            const res = await fetch("https://api.github.com/repos/ravegirl/me/commits?per_page=1");
+            const res = await fetch("https://api.github.com/repos/6ae95ca5f809/me/commits?per_page=1");
             if (res.ok) {
                 const [commit] = await res.json();
                 const date = new Date(commit.commit.committer.date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
@@ -187,7 +187,7 @@
             class:visible
             style="--delay: {delays.pfp}"
         >
-            <img bind:this={pfpImg} src="https://github.com/ravegirl.png" alt="profile picture" />
+            <img bind:this={pfpImg} src="https://github.com/6ae95ca5f809.png" alt="profile picture" />
         </div>
 
         <div class="content">
@@ -262,7 +262,7 @@
                     
                     <a
                         class="svelte-link"
-                        href="https://github.com/ravegirl/me"
+                        href="https://github.com/6ae95ca5f809/me"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
